@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sishu Vikash Vidya Mandir</title>
+    <!-- Bootstrap 5 -->
+    <link
+      href="src/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="src/css/fontawesome.all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .container {
+        background-color: antiquewhite;
+        height: 100vh;
+      }
+      .tooltip .tooltip-arrow {
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent transparent #333 transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-2 border">
+      <div class="">
+        <div>
+          <h1 class="text-center mb-4">Sishu Vikash Vidya Mandir</h1>
+        </div>
+      </div>
+      <hr />
+      <!-- File Upload Section -->
+      <div class="row mb-4">
+        <div class="col-md-1">
+          <a
+            href="src/excel/multi_class_student.xlsx"
+            target="_blank"
+            class="btn btn-info"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Download Sample Excel"
+            ><i class="fa fa-file-download"></i
+          ></a>
+        </div>
+        <div class="col-md-3">
+          <select id="class" class="form-select">
+            <option value="">---select class----</option>
+            <option value="1">Class 1</option>
+            <option value="2">Class 2</option>
+            <option value="3">Class 3</option>
+            <!-- <option value="4">Class 4</option>
+            <option value="5">Class 5</option> -->
+          </select>
+          <span id="error-class" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+          <input
+            type="file"
+            id="uploadFile"
+            class="form-control"
+            accept=".csv,.xlsx"
+          />
+          <span id="error-uploadFile" class="text-danger"></span>
+          <!-- <small class="text-muted">Upload your "my_excel.csv" file to start.</small>    uploadCsv(this) -->
+        </div>
+        <div class="col-md-4">
+          <button
+            class="btn btn-primary col-12"
+            type="button"
+            onclick=""
+            id="submit"
+            onclick="upload_csv"
+          >
+            Upload
+          </button>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div id="csvTable">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Roll</th>
+              <th>Exam Details</th>
+              <th>Total</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script type="text/javascript" src="src/js/jquery-3.7.1.slim.min.js"></script>
+    <script type="text/javascript" src="src/js/popper.min.js"></script>
+    <script type="text/javascript" src="src/js/bootstrap-4.5.2.min.js"></script>
+
+    
+    <script type="text/javascript" src="src/js/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="src/js/jspdf.umd.min.js"></script>
+    <script type="text/javascript" src="src/js/jspdf.plugin.autotable.min.js" ></script>
+    <script type="text/javascript" src="src/constant.js"></script>
+    <script type="text/javascript" src="src/script.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+  </body>
+</html>
